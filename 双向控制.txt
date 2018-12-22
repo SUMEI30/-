@@ -1,0 +1,120 @@
+ $(".swiper_bot ul li").eq($(".swiper_bot ul li").length).css("margin-right",0+"px")
+  var botw=$(".swiper_bot ul li").length*$(".swiper_bot ul li").width()
+  var botm=parseInt($(".swiper_bot ul li").css('marginRight'))
+  var botl=botw+$(".swiper_bot ul li").length*botm+40
+  $(".swiper_bot ul").css("width",botl+"px")
+
+  var bots=$(".swiper_bot ul li").width()+botm
+
+   var n=0;
+   var i=0;
+
+ function cg(n){
+       $(".swiper_top ul li").eq(n).stop(true).fadeIn(500).show().siblings().stop(true).fadeOut(500).hide()
+
+    $(".swiper_bot ul li").eq(n).css("border","2px solid #00aca0").siblings().css("border","none")
+ }
+ // 大图片的点击
+ $(".swiper_top .tprev").click(function(){
+    console.log(n)
+     if(n>0){
+        n--;
+        cg(n)
+        ld(n)
+      }
+
+ });
+
+  $(".swiper_top .tnext").click(function(){
+     console.log(n)
+
+     if(n<$(".swiper_bot ul li").length-1){
+          n++;
+          cg(n)
+          rd(n)
+
+     }
+ });
+
+ $(".swiper_bot .bprev").click(function(){
+
+     if(n>0){
+        n--;
+        cg(n)
+        ld(n)
+      }
+
+ });
+  $(".swiper_bot .bnext").click(function(){
+     console.log(1)
+     if(n<$(".swiper_bot ul li").length-1){
+          n++;
+          cg(n)
+          rd(n)
+
+     }
+
+ });
+
+
+  // 右移动算法
+  function rd(n){
+            if(n>3+i){
+              i++
+         var speed=$(".swiper_bot ul").position().left-bots
+          $(".swiper_bot ul").css("left",speed+"px")
+        }
+      }
+  // 左移动算法
+  function ld(n){
+      if(n==i-1){
+          var speed=$(".swiper_bot ul").position().left+bots
+        $(".swiper_bot ul").css("left",speed+"px")
+          i--
+        }
+      }
+
+    $(".bot_view ul li").click(function(){
+    console.log()
+      n=$(this).index()
+      cg(n)
+      rd(n)
+})
+
+
+
+
+
+  <div class="xqcase_box">
+               <div class="swiper_top">
+                    <ul>
+                    <volist name="anli" id="vo">
+                        <li>
+                          <img src="{$vo.url}" alt="">
+                        </li>
+                    </volist>
+                    </ul>
+
+                      <span class="tprev">
+                        <img src="/statics/default/images/bg/images/xq_tprev.png" alt="">
+                     </span>
+                     <span class="tnext">
+                         <img src="/statics/default/images/bg/images/xq_tnext.png" alt="">
+                     </span>
+                </div>
+                <div class="swiper_bot">
+                      <span class="bprev">
+                        <img src="/statics/default/images/bg/images/xq_bprev.jpg" alt="">
+                     </span>
+                     <span class="bnext">
+                         <img src="/statics/default/images/bg/images/xq_bnext.jpg" alt="">
+                     </span>
+                   <div class="bot_view">
+                    <ul>
+                    <volist name="anli" id="vo">
+                        <li><img src="{$vo.url}" alt=""></li>
+                    </volist>
+                    </ul>
+                    </div>
+                </div>
+             </div>

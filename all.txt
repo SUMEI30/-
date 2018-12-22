@@ -1,0 +1,67 @@
+<div class="all clearfix">
+                   <div class="all-btn">
+                      <div class="btn1"></div>
+                      <div class="cir"></div>
+                   </div>
+                   <span>ȫѡ</span>
+              </div>
+
+
+
+.ask-floor .all{
+	text-align: center;
+	font-size: 14px;
+	color:#999;
+	line-height: 20px;
+
+}
+.ask-floor .all .all-btn{
+	width: 35px;
+	height: 18px;
+	border-radius: 50px;
+	border:2px solid #ccc;
+	margin-right: 10px;
+    position:relative;
+    box-sizing:border-box;
+    cursor: pointer;
+    float:left;
+    margin-left: 140px;
+    margin-bottom: 40px;
+}
+.ask-floor .all .all-btn .cir{
+	width:22px;
+	height: 22px;
+	border-radius: 50%;
+	background: #d0d0d0;
+	position: absolute;
+	left:-4px;
+	top:-4px;
+	z-index: 9;
+}
+.ask-floor .all .on{
+	border-color:#e93e0c;
+}
+.ask-floor .all span{
+	float: left;
+}
+
+
+
+
+
+           $(".ask-floor .all-btn").click(function(){
+                  if($(this).hasClass("on")){
+                    $(this).removeClass('on')
+                    $(this).find(".cir").animate({"left":"-4px"},200)
+                      $(this).find(".cir").css("background","#d0d0d0")
+                     $(".ask-floor .ask-ul ul li i").removeClass('on')
+                     
+                    }else{
+                     $(this).find(".cir").css("background","#e93e0c")
+                      $(this).addClass('on')
+                     $(this).find(".cir").animate({"left":"14px"},200)
+
+                      $(".ask-floor .ask-ul ul li i").addClass('on')
+                      
+                    }
+        })

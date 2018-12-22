@@ -1,0 +1,1 @@
+<textarea id="taContent" rows="3"  maxlength="20" onchange="this.value=this.value.substring(0, 20)" onkeydown="this.value=this.value.substring(0, 20)" onkeyup="this.value=this.value.substring(0, 20)" ></textarea>

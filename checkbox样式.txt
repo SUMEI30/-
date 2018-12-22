@@ -1,0 +1,44 @@
+    <div class="sort">
+       <div class="sort-box">
+            <input type="radio" id="myCheck1" class="myCheck" name="myCheck">
+             <label for="myCheck1"></label>
+              <span>论文投稿</span>
+        </div>
+        <div class="sort-box">
+            <input type="radio" id="myCheck2" class="myCheck" name="myCheck">
+            <label for="myCheck2"></label>
+            <span>论文写作</span>
+        </div>
+        <div class="sort-box">
+             <input type="radio" id="myCheck3" class="myCheck" name="myCheck">
+             <label for="myCheck3"></label>
+             <span>其他问题</span>
+        </div>
+     </div>
+
+
+
+.wenda-quiz .send .myCheck{
+   display:none;
+}
+.myCheck + label{
+    background-color: #f6f6f6;
+    border-radius:100%;
+    border:1px solid #dedede;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    cursor:pointer;
+}
+#myCheck1:checked + label{
+    background:#4cc17b;
+}
+#myCheck2:checked + label{
+    background:#4cc17b;
+}
+#myCheck3:checked + label{
+    background:#4cc17b;
+}
